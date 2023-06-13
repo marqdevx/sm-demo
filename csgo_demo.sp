@@ -15,7 +15,7 @@ public Plugin myinfo = {
 
 public void OnPluginStart(){
     RegAdminCmd("sm_startdemo", Command_startdemo, ADMFLAG_GENERIC, "Start demo recording");
-    RegAdminCmd("sm_cfgstopdemo", Command_stopdemo, ADMFLAG_GENERIC, "Stops demo recording");
+    RegAdminCmd("sm_stopdemo", Command_stopdemo, ADMFLAG_GENERIC, "Stops demo recording");
 }
 
 public Action Command_startdemo(int client, int args)
@@ -50,12 +50,12 @@ public Action Command_stopdemo(int client, int args)
 // Custom chat commands with dot prefix
 public void OnClientSayCommand_Post(int client, const char[] command, const char[] sArgs)
 {
-	if (!CheckCommandAccess(client, "sm_cfgstopdemo", ADMFLAG_GENERIC))
+	if (!CheckCommandAccess(client, "sm_startdemo", ADMFLAG_GENERIC))
 	{
 		return;
 	}
 
-	else if (StrEqual(sArgs, ".stopdemo", false))
+	if (StrEqual(sArgs, ".stopdemo", false))
 	{
 		Command_stopdemo(client, 0);
 	}

@@ -5,10 +5,10 @@ The format: DayMonth_Hour-Minute_Map for example `12June_20-05_inferno.dem` on a
 So the final directory will be `{server}/csgo/gotv/{demo}.dem`
 
 ## Commands
-### `sm_record`
+### `sm_startdemo`
 Start the recording.
 Chat command: `.record`
 
-### `sm_stoprecord`
+### `sm_stopdemo`
 Stops the recording.
-Chat command: `.stoprecord`
+Chat command: `.stopdemo`
